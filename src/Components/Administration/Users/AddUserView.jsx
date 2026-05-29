@@ -17,6 +17,8 @@ export default function AddUserView({onSave, roles}) {
         if (!RolID && safeRoles.length > 0) {
             setRolID(safeRoles[0].rolId);
         }
+    // safeRoles deriva directamente de roles (ya incluido); la referencia del array cambia en cada render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [roles, safeRoles.length, RolID]);
 
     const saveUser = () => {

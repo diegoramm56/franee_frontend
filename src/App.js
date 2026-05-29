@@ -155,6 +155,8 @@ function App() {
       events.forEach((eventName) => window.removeEventListener(eventName, markActivity));
       window.clearInterval(intervalId);
     };
+    // onLogOutHandle es estable en tiempo de ejecución; agregarlo al array causaría re-registro infinito del intervalo
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
   const renderProtectedLayout = () => {

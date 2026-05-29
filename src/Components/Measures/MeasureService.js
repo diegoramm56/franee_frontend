@@ -113,4 +113,5 @@ class MeasureService {
   }
 }
 
-export default new MeasureService();
+const measureService = new MeasureService();
+export default measureService;
